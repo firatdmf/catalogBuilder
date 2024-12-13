@@ -10,6 +10,7 @@ def convert_webp(image_path):
     img = Image.open(image_path)
     output_path = image_path.rsplit(".", 1)[0] + ".jpeg"  # Convert to .jpeg format
     img.convert("RGB").save(output_path, "JPEG")
+    os.remove(image_path)
     return output_path
 
 
